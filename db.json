@@ -1,0 +1,64 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "name": "Abdulmajid",
+      "surname": "Abdumalikov",
+      "username": "abdulmajid",
+      "password": "6666",
+      "phone": "+998973409978",
+      "role": "ADMIN"
+    },
+    {
+      "id": "2",
+      "type": "worker",
+      "name": "Dilshod",
+      "surname": "Mahmudov",
+      "username": "dilshod2003",
+      "password": "4561",
+      "phone": "+998000000000",
+      "role": "ENGINEER"
+    },
+    {
+      "id": "3",
+      "type": "worker",
+      "name": "Yusuf",
+      "surname": "Mo'minov",
+      "username": "yusuf2003",
+      "password": "8566",
+      "phone": "+998000000000",
+      "role": "DESIGNER"
+    },
+    {
+      "id": "4",
+      "type": "worker",
+      "name": "Sunnatilla",
+      "surname": "Vahobjonov",
+      "username": "sunnat0318",
+      "password": "6978",
+      "phone": "+998000000000",
+      "role": "TEACHER"
+    },
+    {
+      "id": "5",
+      "type": "worker",
+      "name": "Otabek",
+      "surname": "Rahmonqulov",
+      "username": "otabek2001",
+      "password": "3487",
+      "phone": "+998000000000",
+      "role": "ENGINEER"
+    },
+    {
+      "id": "6",
+      "type": "worker",
+      "name": "Islomjon",
+      "surname": "Ahmadov",
+      "username": "islom2005",
+      "password": "4632",
+      "phone": "+998000000000",
+      "role": "DELIVER"
+    }
+  ],
+  "administration": []
+}
