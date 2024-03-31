@@ -1,7 +1,7 @@
 {
   "data": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Abdulmajid",
       "surname": "Abdumalikov",
       "username": "abdulmajid",
@@ -12,12 +12,18 @@
     {
       "id": "2",
       "type": "worker",
-      "name": "Dilshod",
+      "name": "Dilshodjon",
       "surname": "Mahmudov",
       "username": "dilshod2003",
       "password": "4561",
       "phone": "+998000000000",
-      "role": "ENGINEER"
+      "role": "ENGINEER",
+      "newObj": {
+        "name": "Dilshod",
+        "role": "ENGINEER",
+        "username": "dilshod2003",
+        "phone": "+998000000000"
+      }
     },
     {
       "id": "3",
