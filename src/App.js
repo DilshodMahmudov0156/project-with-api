@@ -5,12 +5,22 @@ import CardSection from "./components/card-section";
 import PostData from "./components/post-data";
 import {logDOM} from "@testing-library/react";
 import EditingData from "./components/editing-data";
+import { BrowserRouter as Router, Routes, Route, NavLink } from "react-router-dom";
+import LoginPage from "./components/login-page";
+import WorkersSection from "./components/workers-section";
 
 function App() {
   const [ data, setData ] = useState([]);
   const [showAdd, setShowAdd] = useState(false);
   const [showUpdate, setShowUpdate] = useState(false);
   const [editObj, setEditObj] = useState(null);
+  const [login, setLogin] = useState(false);
+
+  const forActive = ({isActive}) => {
+      return(
+          isActive? "list-group-item active": "list-group-item"
+      );
+  };
 
   useEffect(() => {
       fetch('http://localhost:3000/data')
@@ -88,7 +98,9 @@ function App() {
       })
           .then(response => response.json())
           .then(data => {console.log(data)})
-          .catch(err => {console.log(err)})
+          .catch(err => {console.log(err)});
+      setEditObj(null);
+      setShowUpdate(false);
   }
 
   const getData = () => {
@@ -96,16 +108,41 @@ function App() {
   }
   return (
     <div className="app">
-        <button className="btn btn-primary d-block mx-auto mt-5" onClick={() => {opener("open")}}>
-            add new <i className="bi bi-person-plus-fill"></i>
-        </button>
-        <CardSection data={data} deletePerson={deletePerson} secondOpener={secondOpener}/>
-        {
-            showAdd? <PostData opener={opener} adder={poster}/>: null
-        }
-        {
-            showUpdate? <EditingData secondOpener={secondOpener} updater={updater} editObj={editObj}/>: null
-        }
+        <Router>
+            <div className="d-flex">
+                <div className="left-side">
+                    <ul className="list-group">
+                        <NavLink to="/" className={forActive} aria-current="true">
+                            <i className="bi bi-person-circle"></i> Xodimlar
+                        </NavLink>
+                        <NavLink to="/sozlamalar" className={forActive}><i className="bi bi-gear"></i> Sozlamalar</NavLink>
+                    </ul>
+                    <button
+                        className="btn btn-primary w-100 mt-2"
+                        onClick={() => {
+                            opener("open")
+                        }}>
+                        add new <i className="bi bi-person-plus-fill"></i>
+                    </button>
+                </div>
+                <div className="main-side px-3">
+                    {
+                        showAdd ? <PostData opener={opener} adder={poster}/> : null
+                    }
+                    {
+                        showUpdate ?
+                            <EditingData secondOpener={secondOpener} updater={updater} editObj={editObj}/> : null
+                    }
+                    {
+                        login? <LoginPage/>: null
+                    }
+                    <Routes>
+                        <Route path="/" element={<WorkersSection data={data}/>}/>
+                        <Route path="/sozlamalar" element={<CardSection data={data} deletePerson={deletePerson} secondOpener={secondOpener}/>}/>
+                    </Routes>
+                </div>
+            </div>
+        </Router>
     </div>
   );
 }

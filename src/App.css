@@ -20,4 +20,19 @@
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(4px);
+  z-index: 1;
+}
+.list-group-item.active{
+  z-index: 0;
+}
+.left-side{
+  width: 260px;
+  height: 100vh;
+  border-right: 1px solid gray;
+  box-sizing: border-box;
+  padding: 20px;
+}
+.main-side{
+  width: 100%;
+  height: 100vh;
 }

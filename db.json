@@ -12,14 +12,14 @@
     {
       "id": "2",
       "type": "worker",
-      "name": "Dilshodjon",
+      "name": "Dilshod",
       "surname": "Mahmudov",
       "username": "dilshod2003",
       "password": "4561",
       "phone": "+998000000000",
       "role": "ENGINEER",
       "newObj": {
-        "name": "Dilshod",
+        "name": "Dilshodjon",
         "role": "ENGINEER",
         "username": "dilshod2003",
         "phone": "+998000000000"
@@ -28,12 +28,18 @@
     {
       "id": "3",
       "type": "worker",
-      "name": "Yusuf",
+      "name": "Yusufjon",
       "surname": "Mo'minov",
       "username": "yusuf2003",
       "password": "8566",
       "phone": "+998000000000",
-      "role": "DESIGNER"
+      "role": "DESIGNER",
+      "newObj": {
+        "name": "Yusuf",
+        "role": "DESIGNER",
+        "username": "yusuf2003",
+        "phone": "+998000000000"
+      }
     },
     {
       "id": "4",
