@@ -11,6 +11,16 @@
   right: 0;
   overflow: auto;
 }
+.my-login-modal{
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  overflow: auto;
+  background-color: #ffff;
+  z-index: 1;
+}
 .my-modal{
   width: 100%;
   height: 100vh;

@@ -16,6 +16,17 @@ function App() {
   const [editObj, setEditObj] = useState(null);
   const [login, setLogin] = useState(false);
 
+    const handleSubmit = (e, obj) => {
+        e.preventDefault();
+
+        if(obj.login === "admin" && obj.password === "1234"){
+            setLogin(true);
+        }else{
+            alert("login or password is wrong! try again.")
+            setLogin(false);
+        }
+    }
+
   const forActive = ({isActive}) => {
       return(
           isActive? "list-group-item active": "list-group-item"
@@ -117,12 +128,10 @@ function App() {
                         </NavLink>
                         <NavLink to="/sozlamalar" className={forActive}><i className="bi bi-gear"></i> Sozlamalar</NavLink>
                     </ul>
-                    <button
-                        className="btn btn-primary w-100 mt-2"
-                        onClick={() => {
-                            opener("open")
-                        }}>
-                        add new <i className="bi bi-person-plus-fill"></i>
+                    <button className="btn btn-primary w-100 mt-2" onClick={() => {
+                        setLogin(false);
+                    }}>
+                        lock <i className="bi bi-lock-fill"></i>
                     </button>
                 </div>
                 <div className="main-side px-3">
@@ -134,7 +143,7 @@ function App() {
                             <EditingData secondOpener={secondOpener} updater={updater} editObj={editObj}/> : null
                     }
                     {
-                        login? <LoginPage/>: null
+                        login? null: <LoginPage handleSubmit={handleSubmit}/>
                     }
                     <Routes>
                         <Route path="/" element={<WorkersSection data={data}/>}/>
